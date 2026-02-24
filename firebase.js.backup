@@ -1,0 +1,16 @@
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAE0GUC4cHXxaRFw134n4Exvb_jQXMVPzI",
+  authDomain: "gym-matching-app.firebaseapp.com",
+  projectId: "gym-matching-app",
+  storageBucket: "gym-matching-app.firebasestorage.app",
+  messagingSenderId: "875952703758",
+  appId: "1:875952703758:web:0abbce58f11ecce984ef5f"
+};
+
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);
