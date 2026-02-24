@@ -1,50 +1,122 @@
-# Welcome to your Expo app 👋
+# 🏋️ GymMatch
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+ジムで筋トレを教えたい人と教わりたい人をマッチングするアプリ
 
-## Get started
+## 📱 機能
 
-1. Install dependencies
+### 認証機能
+- メール/パスワードでの新規登録・ログイン
+- ログアウト機能
 
-   ```bash
-   npm install
-   ```
+### プロフィール機能
+- 役割選択（教える側/教わる側）
+- 基本情報登録（名前、年齢、利用ジム）
+- 詳細設定（得意種目、目標、鍛えたい部位）
+- スケジュール設定（空き曜日・時間）
+- プロフィール編集機能
 
-2. Start the app
+### マッチング機能
+- 相性スコア自動計算（最大100点）
+  - 鍛えたい部位の一致度
+  - 同じジムかどうか
+  - 空き曜日の一致度
+  - 空き時間の一致度
+  - 指導経験ボーナス
+- スコア順の一覧表示
+- プロフィール詳細表示
+- 相性の理由表示
 
-   ```bash
-   npx expo start
-   ```
+### コミュニケーション機能
+- リアルタイムチャット
+  - 吹き出し形式のUI
+  - 送信時刻表示
+- スケジュール調整
+  - カレンダーで日付選択
+  - 時間帯選択
+  - トレーニングリクエスト送信
 
-In the output, you'll find options to open the app in a
+### その他の機能
+- 通知機能（未読チャット・リクエスト数表示）
+- レビュー/評価機能（星5段階評価）
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🛠️ 使用技術
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### フロントエンド
+- React Native
+- Expo
+- React Navigation
 
-## Get a fresh project
+### バックエンド
+- Firebase Authentication（認証）
+- Firebase Firestore（データベース）
+- Firebase Hosting（Web公開）
 
-When you're ready, run:
+### 開発ツール
+- Node.js
+- npm
+- Git/GitHub
+- EAS Build
 
-```bash
-npm run reset-project
+## 📂 プロジェクト構成
+```
+gym-matching-expo/
+├── src/
+│   ├── screens/          # 画面コンポーネント
+│   │   ├── LoginScreen.js
+│   │   ├── HomeScreen.js
+│   │   ├── ProfileSetupScreen.js
+│   │   ├── ProfileEditScreen.js
+│   │   ├── ProfileDetailScreen.js
+│   │   ├── ChatScreen.js
+│   │   ├── ScheduleScreen.js
+│   │   └── ReviewScreen.js
+│   ├── components/       # 再利用可能なコンポーネント
+│   │   └── NotificationBadge.js
+│   ├── utils/           # ユーティリティ関数
+│   │   └── matchScore.js
+│   └── config/          # 設定ファイル
+│       └── firebase.js
+├── App.js               # エントリーポイント
+└── package.json         # 依存関係
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🚀 セットアップ
 
-## Learn more
+### 1. リポジトリをクローン
+```bash
+git clone https://github.com/あなたのユーザー名/gym-matching-app.git
+cd gym-matching-app
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 2. 依存関係をインストール
+```bash
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 3. Firebaseの設定
 
-## Join the community
+1. [Firebase Console](https://console.firebase.google.com/)でプロジェクトを作成
+2. `src/config/firebase.js`に自分のFirebase設定を入力
 
-Join our community of developers creating universal apps.
+### 4. 起動
+```bash
+npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Expo Goアプリで表示されるQRコードを読み取る
+
+## 📝 今後の改善案
+
+- [ ] プロフィール画像アップロード機能
+- [ ] プッシュ通知機能
+- [ ] 位置情報を使った近くのジム検索
+- [ ] トレーニングメニュー共有機能
+- [ ] グループトレーニング機能
+
+## 📄 ライセンス
+
+MIT License
+
+## 👤 作成者
+
+開発者：[GymDev](https://github.com/GymDev)
